@@ -8,10 +8,6 @@ def generate_sorted_data(size):
     return data
 
 
-def generate_unsorted_data(size):
-    return random.sample(range(size * 3), size)
-
-
 def generate_target(data, case="random"):
     if case == "best":
         return data[0]

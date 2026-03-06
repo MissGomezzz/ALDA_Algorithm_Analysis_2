@@ -10,7 +10,6 @@ from src.searching import (
 
 from src.data_generator import (
     generate_sorted_data,
-    generate_unsorted_data,
     generate_target
 )
 
@@ -35,20 +34,10 @@ def run_experiment():
     for size in sizes:
         print(f"Testing size {size}")
 
-        sorted_data = generate_sorted_data(size)
-        unsorted_data = generate_unsorted_data(size)
-
-        target_sorted = generate_target(sorted_data)
-        target_unsorted = generate_target(unsorted_data)
+        data = generate_sorted_data(size)
+        target = generate_target(data)
 
         for name, algorithm in algorithms.items():
-
-            if name == "Linear Search":
-                data = unsorted_data
-                target = target_unsorted
-            else:
-                data = sorted_data
-                target = target_sorted
 
             exec_time = measure_execution_time(algorithm, data, target)
             results[name][size] = exec_time
