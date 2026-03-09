@@ -226,15 +226,21 @@ The following graphs appeared.
 
 Since several searching algorithms require the input array to be sorted (Binary Search, Jump Search, Interpolation Search, and Exponential Search), the experiments were conducted using sorted arrays. This ensures that all algorithms operate under valid conditions and can be fairly compared.
 
-After running the experiment, the graph compares the execution time of the five searching algorithms as the input size increases from 100 to 10,000 elements.
+After running the experiment, the graph compares the execution time of the five searching algorithms as the input size increases from 100,000,000 to 300,000,000 elements. 
 
-The results show that Linear Search has the highest growth in execution time. This happens because the algorithm may need to check each element in the array until it finds the target, resulting in a time complexity of O(n).
+The results obtained from the experiment show clear differences in the performance of the evaluated search algorithms when the input size increases from 100 million to 300 million elements.
 
-On the other hand, Binary Search, Jump Search, Interpolation Search, and Exponential Search perform significantly faster because they work on sorted arrays and reduce the search space more efficiently.
+The Linear Search algorithm exhibits the highest execution times among all the tested algorithms. This behavior occurs because Linear Search examines the elements sequentially until it finds the target value. As a result, the algorithm may need to inspect a large portion of the dataset before locating the desired element, which corresponds to its theoretical time complexity of O(n). In this experiment, the execution time varies depending on the position of the target within the list. For example, when the target is located closer to the beginning of the array, fewer comparisons are required and the execution time decreases, while targets located further into the dataset require more comparisons and therefore more time.
 
-Binary Search and Exponential Search maintain very low execution times due to their logarithmic complexity O(log n). Jump Search performs slightly slower with complexity O(sqrt(n)), while Interpolation Search also performs efficiently when the data is uniformly distributed.
+The other algorithms — Binary Search, Jump Search, Interpolation Search, and Exponential Search — perform significantly faster because they exploit the fact that the dataset is sorted. Instead of examining every element sequentially, these algorithms progressively reduce the search space, allowing them to locate the target with far fewer comparisons.
 
-Overall, the experiment confirms the theoretical behavior of these algorithms, showing that algorithms with logarithmic complexity scale much better than linear ones as the dataset size increases.
+Binary Search and Exponential Search maintain extremely low execution times because both rely on logarithmic growth of comparisons, corresponding to a time complexity of O(log n). Even when the dataset increases from 100 million to 300 million elements, the number of required comparisons grows very slowly, which explains why their execution times remain almost constant in the graph.
+
+Jump Search performs slightly slower than Binary Search because its complexity is O(sqrt(n)). Although it still reduces the number of comparisons significantly compared to Linear Search, the square root growth means that the number of steps increases faster than logarithmic algorithms as the dataset becomes larger.
+
+Interpolation Search shows very efficient performance in this experiment because the dataset is uniformly distributed. Since the array values increase in a predictable and evenly spaced manner, the algorithm can estimate the likely position of the target very accurately, allowing it to locate the element with very few iterations.
+
+Overall, the experiment confirms the theoretical expectations of these algorithms. Algorithms with logarithmic or sublinear complexity scale much more efficiently as the dataset grows, while algorithms with linear complexity become significantly slower when processing very large datasets.
 
 Also, in the cmd the following output appeared:
 

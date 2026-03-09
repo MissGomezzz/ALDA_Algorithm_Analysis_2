@@ -10,8 +10,9 @@ def plot_results(results):
         plt.plot(sizes, execution_times, label=algorithm)
 
     plt.xlabel("Input Size")
-    plt.ylabel("Execution Time (seconds)")
+    plt.ylabel("Execution Time (milliseconds)")
     plt.title("Searching Algorithms Performance Comparison")
     plt.legend()
     plt.grid(True)
+    plt.yscale("log")
     plt.show()

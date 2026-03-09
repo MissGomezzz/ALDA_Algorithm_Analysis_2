@@ -3,15 +3,8 @@
 import random
 
 def generate_sorted_data(size):
-    data = random.sample(range(size * 3), size)
-    data.sort()
-    return data
+    # ya viene ordenado, O(1)
+    return list(range(size))
 
-
-def generate_target(data, case="random"):
-    if case == "best":
-        return data[0]
-    elif case == "worst":
-        return -1  # value not in array
-    else:
-        return random.choice(data)
+def generate_target(data):
+    return random.randint(0, len(data) - 1)

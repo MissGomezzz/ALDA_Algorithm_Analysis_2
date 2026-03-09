@@ -19,7 +19,7 @@ from src.plot_results import plot_results
 
 
 def run_experiment():
-    sizes = [100, 500, 1000, 5000, 10000]
+    sizes = [100_000_000, 200_000_000, 300_000_000]
 
     algorithms = {
         "Linear Search": linear_search,
@@ -33,9 +33,13 @@ def run_experiment():
 
     for size in sizes:
         print(f"Testing size {size}")
-
         data = generate_sorted_data(size)
         target = generate_target(data)
+        inf_limit = data[0]
+        max_limit = data[len(data)-1]
+        print (f"Inferior limit of list: {inf_limit} ")
+        print (f"Superior limit of list: {max_limit}")
+        print (f"Target: {target}")
 
         for name, algorithm in algorithms.items():
 
