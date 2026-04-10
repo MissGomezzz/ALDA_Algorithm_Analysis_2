@@ -17,7 +17,7 @@ Analyzing searching algorithms using Big-O Notation.
 
 - [Algorithm #5](#algorithm-5---exponential-search)
 
-- [Worst cases](#worst-cases---comparison)
+- [Worst cases](#worst-case-analysis)
 
 - [Results and Graphs - Analysis](#results-and-graphs---anlaysis)
 
